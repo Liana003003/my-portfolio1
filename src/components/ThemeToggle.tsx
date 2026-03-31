@@ -15,7 +15,7 @@ export default function ThemeToggle() {
     <select
       value={theme.name}
       onChange={handleChange}
-      className="border px-3 py-2 rounded-lg shadow-sm bg-white hover:shadow-md transition"
+      className="border px-2 py-1.5 sm:px-3 sm:py-2 rounded-lg shadow-sm bg-white hover:shadow-md transition text-sm sm:text-base"
     >
       <option value="default">Default ⚪</option>
       <option value="cosmic">Cosmic 🌌</option>
