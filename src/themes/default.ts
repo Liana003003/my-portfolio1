@@ -1,16 +1,15 @@
 export const defaultTheme = {
   name: "default",
-  colors: {
-    background: "#ffffff",
-    backgroundAlt: "#f1f5f9",
-    primary: "#2563eb",
-    accent: "#38bdf8",
-    text: "#111111",
+   colors: {
+    background: "#fef3c7",      // soft cream
+    backgroundAlt: "#fef9c3",   // lighter cream for panels
+    primary: "#f472b6",         // pink/purple
+    accent: "#6366f1",          // violet-blue accent
+    text: "#111827",            // dark gray/black
   },
-  font: "sans-serif",
-
+  font: "Poppins, sans-serif",
   background: {
-    type: "gradient", // or "cosmic" | "grid" | etc
+    type: "gradient",
     animated: true,
   },
 };

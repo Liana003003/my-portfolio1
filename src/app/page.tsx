@@ -57,7 +57,7 @@ export default function Home() {
             <Circle label="About" href="/about" Icon={User} delay={0.2} />
           </div>
 
-          <div className="absolute top-[6%] left-[58%]">
+          <div className="absolute top-[6%] left-[59%]">
             <Circle label="Skills" href="/skills" Icon={Wrench} delay={0.4} />
           </div>
 
@@ -69,7 +69,7 @@ export default function Home() {
             <Circle label="Blog" href="/blog" Icon={PenLine} delay={0.8} />
           </div>
 
-          <div className="absolute top-[45%] left-[91%]">
+          <div className="absolute top-[45%] left-[90%]">
             <Circle label="Contact" href="/contact" Icon={Mail} delay={1} />
           </div>
 

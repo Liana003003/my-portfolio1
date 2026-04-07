@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?> <svg width="800" height="1200" viewBox="0 0 
+800 1200" 
+xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink"> 
+<!-- defs: gradients, filters, fonts --> 
+<defs> 
+<!-- rainbow linear gradient spanning the full height --> 
+<linearGradient id="rainbow" x1="0" y1="0" x2="0" y2="1"> 
+<stop offset="0%" stop-color="#1e90ff"/> <stop offset="18%" stop-color="#00c2ff"/> <stop offset="36%" stop-color="#2ee08c"/> <stop offset="54%" stop-color="#ffdd3b"/> <stop offset="72%" stop-color="#ff8a3d"/> <stop offset="86%" stop-color="#d84ecb"/> <stop offset="100%" stop-color="#5b3fe6"/> </linearGradient> 
+<!-- subtle watercolor blobs using radial gradients -->
+<radialGradient id="blob1" cx="50%" cy="50%" 
+r="50%"> 
+<stop offset="0%" stop-color="#ffffff" stop- 
+opacity="0.0"/> 
+<stop offset="40%" stop-color="#ffffff" stop- opacity="0.0"/> 
+<stop offset="100%" stop-color="#000000" stop-opacity="0.06"/> 
+</radialGradient> 
+<!-- blur filter for soft edges --> <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%"> 
+<feGaussianBlur stdDeviation="18" result="b"/ 
+<feColorMatrix type="matrix" values="1 0 0 0 
+0 
+01000 
+00100 
+0 0 0 0.9 0" in="b"/> 
+</filter> 
+<!-- stroke/glow for block letters --> <filter id="innerShadow" x="-20%" y="-20%" width="140%" height="140%"> 
+<feOffset dx="0" dy="6" result="off"/> <feGaussianBlur in="off" stdDeviation="6" 
+result="blur"/> 
+<feMerge> 
+<feMergeNode in="blur"/> 
+<feMergeNode 
+in="SourceGraphic"/> 
+</feMerge> 
+</filter> 
+<!-- thin black stroke for the cursive path text -->
+<filter id="thinStroke" x="-50%" y="-50%" width="200%" height="200%"> 
+<feGaussianBlur stdDeviation="0.6" 
+result="s"/> 
+<feMerge><feMergeNode in="s"/ ><feMergeNode in="SourceGraphic"/></ 
+feMerge> 
+</filter> </defs> 
+<!-- background (paper-like) --> <rect width="100%" height="100%" fill="#fbfbfb"/> 
+<!-- subtle watercolor blobs behind letters to 
+▬▬ 
+emulate watercolor bleed --> 
+<g opacity="0.85" filter="url(#softBlur)"> 
+<ellipse cx="400" cy="180" rx="270" ry="120" fill="#2ee08c" transform="rotate(-8 400 180)" opacity="0.22"/> 
+<ellipse cx="400" cy="420" rx="340" ry="140" fill="#ff8a3d" transform="rotate(-2 400 420)" opacity="0.24"/> 
+<ellipse cx="400" cy="660" rx="300" ry="140" fill="#d84ecb" transform="rotate(6 400 660)" opacity="0.22"/> 
+<ellipse cx="400" cy="900" rx="280" ry="130" fill="#1e90ff" transform="rotate(-4 400 900)" opacity="0.22"/> 
+</g> 
+<!-- Large square-like block letters (stacked vertically). 
+Font-family is set to heavy sans. If you open in Illustrator/Inkscape you can switch to 'Impact' or 'Anton' --> 
+<g font-family="Impact, 'Anton', 'Arial Black', sans-serif" font-weight="900" text- anchor="middle" fill="url(#rainbow)" 
+filter="url(#innerShadow)"> 
+<text x="400" y="220" font-size="220" letter- spacing="0" style="paint-order: fill stroke;"> 
+S 
+</text> 
+<text x="400" y="460" font-size="220" letter- spacing="0" style="paint-order: fill stroke;"> 
+A 
+</text> 
+<text x="400" y="700" font-size="220" letter- spacing="0" style="paint-order: fill stroke;"> 
+Y 
+</text> 
+<text x="400" y="940" font-size="220" letter- spacing="0" style="paint-order: fill stroke;"> 
+A 
+</text> 
+</g> 
+<!-- add soft darker centers to mimic watercolor pooling --> 
+<g opacity="0.35" filter="url(#softBlur)"> 
+<ellipse cx="400" cy="220" rx="70" ry="30" fill="#000" transform="rotate(-6 400 220)"/> 
+<ellipse cx="400" cy="460" rx="70" ry="30" fill="#000" transform="rotate(-2 400 460)"/> <ellipse cx="400" cy="700" rx="70" ry="30" fill="#000" transform="rotate(6 400 700)"/> 
+<ellipse cx="400" cy="940" rx="70" ry="30" fill="#000" transform="rotate(-4 400 940)"/> 
+</g> 
+<!-- center curvy path -->
+<path id="centerPath" d="M400,40 C395,160 360,280 400,360 
+C440,440 360,560 400,640 
+C440,720 360,840 400,960" 
+fill="none" stroke="none" /> 
+<!-- tiny cursive letters along the path; font- family uses common cursive fallbacks --> 
+<g font-family="Dancing Script', 'Pacifico', 'Brush Script MT', cursive" font-size="38" fill="#0b0b0b" style="letter-spacing:2px;"> 
+<!-- outline for readability -->
+<text> 
+<textPath href="#centerPath" 
+startOffset="0%" method="align"> 
+saya </textPath> 
+</text> 
+<!-- duplicate with slight blur/stroke for 
+contrast --> 
+<text filter="url(#thinStroke)" fill="#000"> 
+<textPath href="#centerPath" startOffset="0%" method="align"> 
+saya </textPath> 
+</text> 
+</g> 
+<!-- small decorative loops (vector) to mimic hand-drawn flourishes --> 
+<g stroke="#000" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"> 
+<path d="M400,48 q -6 20 -2 32 q 6 18 18 24" / 
+<path d="M400,1020 q -10 -20 -2 -34 q 12-18 26-16" /> 
+<!-- little loops inside some letters to emulate 
+the example's small cursive elements --> <path d="M400,260 q -10 6-18 4" /> 
+<path d="M400,500 q -10 6-18 4" /> <path d="M400,740 q -10 6-184" /> </g> 
+<!-- optional: light paper texture vignette --> <rect x="0" y="0" width="800" height="1200" fill="url(#blob1)" opacity="0.02"/> 
+<!-- small note (non-visible when embedded) --> <metadata>Generated SVG: "Saya" vertical stacked rainbow block letters with central 
+cursive path - edit in Inkscape/Illustrator for exact watercolor textures.</metadata> 
+</svg> 
