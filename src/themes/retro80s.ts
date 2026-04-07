@@ -1,14 +1,15 @@
 export const retroTheme = {
   name: "retro80s",
   colors: {
-    background: "#ff0080",
-    backgroundAlt: "#7928ca",
-    primary: "#00ffff",
-    accent: "#f0abfc",
-    text: "#ffffff",
+    background: "#0a001f",
+    backgroundAlt: "#14003a",
+    primary: "#ff00ff",
+    accent: "#00ffff",
+    text: "#f0abfc",
+    textSecondary: "#67e8f9",
+    textInverse: "#14003a",
   },
   font: "monospace",
-
   background: {
     type: "grid",
     animated: true,

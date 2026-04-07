@@ -39,88 +39,56 @@ body {
   animation: blob 12s ease-in-out infinite;
 }
 
-/* cosmic theme */
-[data-theme="cosmic"] {
-  --bg: #05070f;
-  --bg-alt: #0a0f2c;
-
-  --surface: #0f172a;
-  --surface-light: #e2e8f0;
-
-  --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
-  --text-inverse: #0b1026;
-
-  --primary: #1e2a78;
-  --accent: #7c3aed;
-
-  --border: #1f2a44;
-
-  /* effects */
-  --glow: 0 0 12px rgba(124, 58, 237, 0.6);
-}
-
-[data-theme="halloween"] {
-  --bg: #0c0a09;
-  --bg-alt: #1a0f05;
-
-  --surface: #1f1308;
-  --surface-light: #fef3c7;
-
-  --text-primary: #f97316;
-  --text-secondary: #fdba74;
-  --text-inverse: #1a0f05;
-
-  --primary: #ea580c;
-  --accent: #facc15;
-
-  --glow: 0 0 10px rgba(249, 115, 22, 0.7);
-}
-
-/* default theme */
+/* Default theme */
 [data-theme="default"] {
   --bg: #ffffff;
   --bg-alt: #f8fafc;
-
-  --surface: #ffffff;
-  --surface-light: #f1f5f9;
-
-  --text-primary: #0f172a;   /* dark slate */
+  --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-inverse: #ffffff;
-
-  --primary: #2563eb;        /* blue */
-  --accent: #7c3aed;         /* subtle purple */
-
+  --primary: #2563eb;
+  --accent: #7c3aed;
   --border: #e2e8f0;
-
-  /* effects */
-  --glow: 0 0 0 rgba(0,0,0,0); /* no glow */
+  --glow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
-/* 80s theme */
-[data-theme="eighties"] {
+/* Cosmic theme */
+[data-theme="cosmic"] {
+  --bg: #05070f;
+  --bg-alt: #0a0f2c;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-inverse: #0b1026;
+  --primary: #1e2a78;
+  --accent: #7c3aed;
+  --border: #1f2a44;
+  --glow: 0 0 12px rgba(124, 58, 237, 0.6);
+}
+
+/* Halloween theme */
+[data-theme="halloween"] {
+  --bg: #0c0a09;
+  --bg-alt: #1a0f05;
+  --text-primary: #f97316;
+  --text-secondary: #fdba74;
+  --text-inverse: #1a0f05;
+  --primary: #ea580c;
+  --accent: #facc15;
+  --border: #3b1f0b;
+  --glow: 0 0 10px rgba(249, 115, 22, 0.7);
+}
+
+/* Retro 80s theme */
+[data-theme="retro80s"] {
   --bg: #0a001f;
   --bg-alt: #14003a;
-
-  --surface: #1a0b3a;
-  --surface-light: #fdf4ff;
-
   --text-primary: #f0abfc;
   --text-secondary: #67e8f9;
   --text-inverse: #14003a;
-
   --primary: #ff00ff;
   --accent: #00ffff;
-
+  --border: #7928ca;
   --glow: 0 0 15px rgba(255, 0, 255, 0.8);
-}
-
-.eighties-glow {
-  text-shadow:
-    0 0 5px var(--primary),
-    0 0 10px var(--primary),
-    0 0 20px var(--accent);
 }
 
 .cosmic-galaxy {
@@ -128,7 +96,6 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-
   background: radial-gradient(
       ellipse at 30% 40%,
       rgba(124, 58, 237, 0.25),
@@ -139,10 +106,8 @@ body {
       rgba(30, 42, 120, 0.2),
       transparent 70%
     );
-
   filter: blur(60px);
   opacity: 0.6;
-
   animation: galaxyMove 60s linear infinite;
 }
 
@@ -164,11 +129,14 @@ body {
   background-image: radial-gradient(white 1px, transparent 1px);
   background-size: 3px 3px;
   opacity: 0.15;
-
   animation: starsDrift 120s linear infinite;
 }
 
 @keyframes starsDrift {
-  from { transform: translateY(0); }
-  to { transform: translateY(-200px); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-200px);
+  }
 }

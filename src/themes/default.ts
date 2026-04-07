@@ -1,11 +1,13 @@
 export const defaultTheme = {
   name: "default",
-   colors: {
-    background: "#fef3c7",      // soft cream
-    backgroundAlt: "#fef9c3",   // lighter cream for panels
-    primary: "#f472b6",         // pink/purple
-    accent: "#6366f1",          // violet-blue accent
-    text: "#111827",            // dark gray/black
+  colors: {
+    background: "#ffffff",
+    backgroundAlt: "#f8fafc",
+    primary: "#2563eb",
+    accent: "#7c3aed",
+    text: "#0f172a",
+    textSecondary: "#475569",
+    textInverse: "#ffffff",
   },
   font: "Poppins, sans-serif",
   background: {

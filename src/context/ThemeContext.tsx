@@ -42,9 +42,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setMounted(true);
   }, []);
 
-  // Save theme
   useEffect(() => {
     localStorage.setItem("theme", JSON.stringify(theme));
+    if (typeof document !== "undefined") {
+      document.documentElement.setAttribute("data-theme", theme.name);
+    }
   }, [theme]);
 
   return (

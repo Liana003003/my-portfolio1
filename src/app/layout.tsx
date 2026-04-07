@@ -17,7 +17,7 @@ function ThemedLayout({ children }: { children: React.ReactNode }) {
     <div
       className="relative"
       style={{
-        color: theme.colors.text,
+        color: "var(--text-primary)",
         fontFamily: theme.font,
         minHeight: "100vh",
       }}
@@ -25,9 +25,7 @@ function ThemedLayout({ children }: { children: React.ReactNode }) {
       <AnimatedBackground theme={theme} />
 
       <div className="relative z-10">
-        {/* ✅ Show Navbar ONLY if not homepage */}
         {pathname !== "/" && <Navbar />}
-
         {children}
       </div>
     </div>
