@@ -19,7 +19,7 @@ function ThemedLayout({ children }: { children: React.ReactNode }) {
       style={{
         color: "var(--text-primary)",
         fontFamily: theme.font,
-        minHeight: "100vh",
+        minHeight: "50vh",
       }}
     >
       <AnimatedBackground theme={theme} />

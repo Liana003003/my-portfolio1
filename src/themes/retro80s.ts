@@ -13,5 +13,7 @@ export const retroTheme = {
   background: {
     type: "grid",
     animated: true,
+    gradient: "linear-gradient(-45deg, #1a0000, #330000, #ff6f00)",
+    blobColor: "#330000",
   },
 };

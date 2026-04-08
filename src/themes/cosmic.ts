@@ -13,5 +13,7 @@ export const cosmicTheme = {
   background: {
     type: "cosmic",
     animated: true,
+    gradient: "linear-gradient(-45deg, #05070f, #0a0f2c, #7c3aed)",
+    blobColor: "#0a0f2c",
   },
 };

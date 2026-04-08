@@ -14,39 +14,38 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return defaultTheme;
+
+    const saved = localStorage.getItem("theme");
+    if (!saved) return defaultTheme;
+
+    try {
+      const parsed = JSON.parse(saved);
+      if (
+        !parsed ||
+        typeof parsed !== "object" ||
+        !("colors" in parsed) ||
+        !("background" in parsed)
+      ) {
+        return defaultTheme;
+      }
+      return parsed;
+    } catch {
+      return defaultTheme;
+    }
+  });
+
   const [mounted, setMounted] = useState(false);
 
-
   useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        // Validate shape so we never set an invalid theme and crash consumers.
-        if (
-          !parsed ||
-          typeof parsed !== "object" ||
-          !("colors" in parsed) ||
-          !("background" in parsed)
-        ) {
-          setTheme(defaultTheme);
-        } else {
-          // eslint-disable-next-line react-hooks/set-state-in-effect
-          setTheme(parsed);
-        }
-      } catch {
-        setTheme(defaultTheme);
-      }
-    }
+     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
   useEffect(() => {
     localStorage.setItem("theme", JSON.stringify(theme));
-    if (typeof document !== "undefined") {
-      document.documentElement.setAttribute("data-theme", theme.name);
-    }
+    document.documentElement.setAttribute("data-theme", theme.name);
   }, [theme]);
 
   return (

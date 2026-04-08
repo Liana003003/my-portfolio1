@@ -9,9 +9,11 @@ export const halloweenTheme = {
     textSecondary: "#fdba74",
     textInverse: "#1a0f05",
   },
-  font: "cursive",
+  font: "'Creepster', cursive",
   background: {
-    type: "spooky",
+    type: "halloween",
     animated: true,
+    gradient: "linear-gradient(-45deg, #1a0000, #330000, #ff6f00)",
+    blobColor: "#330000",
   },
 };
