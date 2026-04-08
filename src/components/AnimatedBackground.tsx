@@ -5,9 +5,6 @@ export default function AnimatedBackground({ theme }: { theme: any }) {
   const isCosmic = theme.background.type === "cosmic";
   const animated = theme.background.animated ?? true;
 
-  console.log("theme:", theme);
-console.log("background type:", theme?.background?.type);
-
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
 

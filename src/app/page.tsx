@@ -29,7 +29,7 @@ export default function Home() {
 
       {isMobile && <HamburgerMenu />}
 
-      <div className="flex h-full items-center justify-center lg:justify-start min-h-[calc(100vh-5rem)]">
+      <div className="flex h-full items-center justify-center lg:justify-start lg:items-end min-h-[calc(100vh-8.5rem)]">
 
         <div className="text-center lg:text-left lg:pl-16 max-w-full lg:max-w-lg space-y-4 sm:space-y-6 md:space-y-8 px-4">
 
@@ -38,7 +38,7 @@ export default function Home() {
           </h1>
 
           <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold leading-relaxed">
-            I&apos;M LIANA, A FORMER LANGUAGE STUDENT <br className="hidden sm:block" />
+            I&apos;M LIANA, A FORMER LANGUAGE STUDENT<br className="hidden sm:block" />
             <span className="sm:hidden"> </span>TURNED WEB DEVELOPER
           </h2>
 

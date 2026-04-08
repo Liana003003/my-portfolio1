@@ -33,28 +33,29 @@ export default function CosmicParticles({ theme }: any) {
     };
 
     const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particles.forEach((p) => {
-        p.y += p.speed;
+  particles.forEach((p) => {
+    // Move left → right
+    p.x += p.speed * 0.6;
 
-        // Reset when leaving screen
-        if (p.y > canvas.height) {
-          p.y = 0;
-          p.x = Math.random() * canvas.width;
-        }
+    // Reset ONLY when fully off the right side
+    if (p.x - p.radius > canvas.width) {
+      p.x = -p.radius; // re-enter from left
+      p.y = Math.random() * canvas.height;
+    }
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.shadowBlur = 16;
-        ctx.shadowColor = p.color;
-        ctx.globalAlpha = 1;
-        ctx.fill();
-      });
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); // correct axis
+    ctx.fillStyle = p.color;
+    ctx.shadowBlur = 16;
+    ctx.shadowColor = p.color;
+    ctx.globalAlpha = 1;
+    ctx.fill();
+  });
 
-      animationFrameId = requestAnimationFrame(draw);
-    };
+  animationFrameId = requestAnimationFrame(draw);
+};
 
     resize();
     createParticles();
